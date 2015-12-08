@@ -1,23 +1,26 @@
-function MeanMode(arr) { 
-var modecount = 1;
+function MeanMode(arr){
+
+var mean = function(array){
+function plus(a, b){ return a+b;}
+return array.reduce(plus)/array.length;
+};
+
+var mode = function (array){
 var mode = arr[0];
-var sum = 0;
-var modeMap = {};
-  for (var i = 0; i < arr.length; i ++ ) {
-    sum += arr[i];
-    modeMap[arr[i]] = modeMap[arr[i]] + 1 || 1;
-    if (modecount < modeMap[arr[i]]) {
-      modecount = modeMap[arr[i]];
-      mode = arr[i];
-    }
-  }
-  
-  // code goes here  
-  if( mode == (sum/arr.length))
-    return 1;
-  else
-    return 0;
-         
+var modecount = 0;
+var  map = {};
+for (var i = 0; i < array.length; i ++ ) {
+map[array[i]] = map[array[i]]+1 || 1;
+if (map[array[i]] > modecount){
+modecount = map[array[i]];
+mode = array[i];
+}
+}
+return mode;
+};
+
+return mean(arr) == mode(arr);
+
 }
    
 // keep this function call here 
