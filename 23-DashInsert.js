@@ -1,11 +1,10 @@
 function DashInsert(str) { 
-var result = "";
-  for (var i = 0; i < str.length; i ++ ) { 
-    result += str[i];
-    if (i < str.length-1 && str[i]%2!=0 && str[i+1]%2!=0) result += "-";
+str = str.split"";
+  for (var i = 0; i < str.length-1; i ++ ) {
+    if (str[i] % 2 === 1 && str[i+1] % 2 === 1) str.splice(i+1, 0, "-");
   }
   // code goes here  
-  return result; 
+  return str.join(""); 
          
 }
    
