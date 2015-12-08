@@ -1,5 +1,5 @@
 function PowersofTwo(num) { 
-while (num > 0 ) {
+while (num >= 1 ) {
   if (num == 1) return true;
   else return PowersofTwo(num/2);
 }
